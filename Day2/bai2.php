@@ -13,8 +13,8 @@
 
         //th ca 3 co nghiem
         $delta = $b*$b - 4*$a*$c;
-        // $x1;
-        // $x2;
+        $x1="";
+        $x2="";
         if($delta > 0)   {
             $x1 = (-$b + sqrt($delta))/ (2*$a); 
             $x2 = (-$b - sqrt($delta))/ (2*$a); 
@@ -29,5 +29,5 @@
     }
 
     //vd : a = 2, b= 4 , c=5
-    giaiPTBac2(3,2,1);
+    giaiPTBac2(4,3,1);
 ?>

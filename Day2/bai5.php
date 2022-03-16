@@ -6,10 +6,10 @@
    {
         $capNhatBien =  $input; //1234
         $du = $input % 10; // lay du 4
-        
+        echo $du;
         $input = round($capNhatBien/10); //giam 1 chuc lam tron. 123
         
-        echo $du." + ";
+     //    echo $du." + ";
         $tong +=$du;
    }
    echo "= ".$tong;
