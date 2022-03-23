@@ -4,7 +4,7 @@
         if($string == $strReverse) {
             echo $string." là chuỗi Palindrome.";
         } else {
-            echo $string."không phải chuỗi Palindrome.";
+            echo $string." không phải chuỗi Palindrome.";
         }
     }
 
