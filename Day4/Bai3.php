@@ -1,12 +1,22 @@
+
 <?php
-    function standardize($strName) {
-        trim($strName);
-        echo 'Chuoi ban dau la: ['.$strName."]<br/>";
-        $newString = strtolower($strName);
-        $output = ucwords($newString); 
+$name = "    vŨ          văN thƯơNg    ";
+echo "Chuỗi ta nhập vào là: \"" . $name . "\"</br>";
 
-        return $output;
+$output = "";
+$data = explode(" ", $name);
+for ($i = 0; $i < count($data); $i++) {
+    if ($data[$i] != '') {
+        $output .= $data[$i] . " ";
     }
+}
+//thừa khoảng trắng cuối chuỗi
+$output = trim($output);
+// chuyển hết chuỗi thành chữ thường
+$output = mb_strtolower($output, 'UTF-8');
+// chuyển chữ cái đầu của mỗi từ thành in hoa
+$output = ucwords($output);
 
-    echo "Chuoi sau chuan hoa: ". standardize(" cAo KhaNh HuNg ");
-?>
+var_dump($output);
+
+echo "Chuỗi sau khi được chuẩn hóa là: \"" . $output . "\"";
