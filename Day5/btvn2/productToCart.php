@@ -6,18 +6,34 @@
         $products = $_SESSION['products']; 
     }
 
-    echo '<pre>';
-        print_r($products);
-    echo '</pre>';
+    $products = array();
+
+    include('./data.php');
+
+    if(isset($products)) {
+        $_SESSION['products'] = $products;
+    }
+
+
+    if(isset($_SESSION['products'])) {
+    $product = $_SESSION['products']; 
+    }
+
 
     $key = $_GET['id'];
-    $products = $products[$key];
+    $productCart = $product[$key];
+    
+    $productCart['product_amount'] =1;
 
-    var_dump($products);
 
-    $products['product_amount'] =1;
+    $_SESSION['cart'][] = $productCart;
 
-    $_SESSION['cart'][] = $products;
 
+
+    echo '<pre>';
+        print_r($_SESSION);
+    echo '</pre>';
+
+    
     header("Location:cart.php");
 ?>

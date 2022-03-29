@@ -3,15 +3,21 @@
 
     //khoi tao mang rong
     $products = array();
-    if(isset($_SESSION['products'])) {
-        $products = $_SESSION['products']; 
-    }
 
+    include('./data.php');
+
+    $_SESSION['products'] = $products;
+
+    $products = $_SESSION['products']; 
+
+    
 
     echo '<pre>';
         print_r($_SESSION);
     echo '</pre>';
 
+    session_destroy();
+  
    
 ?>
 
