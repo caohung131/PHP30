@@ -1,23 +1,33 @@
 <?php
     session_start();
 
-    //khoi tao mang rong
-    $products = array();
+    // //khoi tao mang rong
+    // $products = array();
 
-    include('./data.php');
+    // include('addProduct.php');
 
-    $_SESSION['products'] = $products;
+    if(!isset($products)) {
+        $products = array();
+    }
 
-    $products = $_SESSION['products']; 
+    if(isset($_SESSION['products'])) {
+        
+        $products = $_SESSION['products']; 
+    }
+    // session_destroy();
 
-    
+    if(!isset($_SESSION['products'])) {
+      echo 'Bạn phải thêm mới sản phẩm';
+    }
 
-    echo '<pre>';
-        print_r($_SESSION);
-    echo '</pre>';
 
-    session_destroy();
-  
+  //     echo "<pre>";
+  //       if(isset($_SESSION['products'])) {
+  //         print_r($_SESSION['products']);
+  //       }
+  // echo "</pre>";
+
+
    
 ?>
 
@@ -35,7 +45,8 @@
 
 <div class="container">
   <h2>Danh sách sản phẩm trong kho</h2>
-  <a href="cart.php">xem giỏ hàng</a>
+  <a href="addProduct.php" class="btn btn-primary">Thêm thêm sản phẩm vào kho</a>
+  <br>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -44,29 +55,33 @@
         <th>Số lượng</th>
         <th>Giá bán</th>
         <th>Ảnh sản phẩm</th>
-        <th>Giỏ hàng</th>
+        <th>Thêm vào giỏ hàng</th>
       </tr>
     </thead>
     <tbody>
-        <?php foreach($products as $key => $product) { ?>
+
+        <?php foreach($products as $key => $product) {  
+          if(isset($product)) {?>
            
         <tr>
           <td> <?php echo $product['product_code']; ?>   </td>
           <td><?php echo $product['product_name']; ?> </td>
           <td><?php echo $product['product_amount']; ?> </td>
           <td><?php echo $product['product_price']; ?> </td>    
-       <td> <img width="100px" height="100px" src="<?php echo $product['product_images']; ?>" alt=""> <?php echo $product['product_images']; ?></td>
-       <td><a href="productToCart.php?id=<?= $key ?>" class="btn btn-primary">Thêm vào giỏ hàng</a></td>    
+         <td> <img width="100px" height="100px" src="<?php echo $product['product_images']; ?>" alt=""> <?php echo $product['product_images']; ?></td>
+         <td><a href="addToCart.php?id=<?=$key?>" class="btn btn-primary">Thêm vào giỏ hàng</a></td>    
           
       </tr>
 
        <?php } ?>
+       <?php } ?>
 
     </tbody>
+   
   </table>
-
-  <a href="add_product.php">add more</a>
+ 
 </div>
+
 
 </body>
 </html>
