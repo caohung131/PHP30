@@ -56,10 +56,59 @@
         }
 
     }
-    $upload = uploadFile('avatar', 'images', array('jpg', 'jpeg', 'png', 'gif'), 5, false);
-    echo "<pre>";
-    var_dump($_FILES['avatar']);
-    echo "</pre>";
-    $_SESSION['upload_status'] = $upload;
-   header('Location: upload.php'); // chuyen lai ve upload file de xem ket qua
+
+    //upload Muti
+    function uploadMuti($input_name, $target_dir, $override = false) {
+        if(is_array($_FILES[$input_name]['name'])) {
+
+            $numberFile = count($_FILES[$input_name]['name']);
+            
+            for ($i=0; $i < $numberFile ; $i++) { 
+                $path = $target_dir . '/' . $_FILES[$input_name]['name'][$i];
+
+                //validate
+                if(file_exists($path) && $override == false) {
+                    $errors[] = "Tên file đã tồn tại trên server, không được ghi đè";
+                    $upload_status = false;
+                }
+                
+                move_uploaded_file($_FILES[$input_name]['tmp_name'][$i], $path);
+            }
+
+
+        } 
+        else {
+            $path = $target_dir . '/' . $_FILES[$input_name]['name'];
+
+             //validate
+            if(file_exists($path) && $override == false) {
+                $errors[] = "Tên file đã tồn tại trên server, không được ghi đè";
+                $upload_status = false;
+            } 
+
+            if($upload_status) {
+                if(move_uploaded_file($_FILES[$input_name]["tmp_name"], $path)) {
+                    return array(true, $path);
+                } else {
+                    $errors[] = "Có lỗi xảy ra khi upload file. Vui lòng kiểm tra lại";
+                    return array(false, $errors);
+                }
+            }
+    
+
+            move_uploaded_file($_FILES[$input_name]['tmp_name'], $path);
+        }
+
+
+        
+    }
+
+    uploadMuti('avatar', 'images');
+
+//     $upload = uploadFile('avatar', 'images', array('jpg', 'jpeg', 'png', 'gif'), 53, false);
+//     echo "<pre>";
+//     var_dump($_FILES['avatar']);
+//     echo "</pre>";
+//     $_SESSION['upload_status'] = $upload;
+//    header('Location: upload.php'); // chuyen lai ve upload file de xem ket qua
 ?>

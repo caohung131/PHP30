@@ -76,7 +76,7 @@ echo 'PHP version: ' . phpversion();
 </head>
 <body>
     <form enctype="multipart/form-data" action="uploadFile.php" method="POST">
-        <input type="file" name="avatar" id="">
+        <input type="file" name="avatar" id="" >
         <button type="submit" name="submit">submit</button>
     </form>
     <br>
