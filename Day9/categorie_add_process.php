@@ -25,5 +25,5 @@
         setcookie('add_false',60*5);
     }
 
-    header('Location: Categories.php');
+    header('Location: index.php');
 ?>

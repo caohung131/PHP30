@@ -1,14 +1,50 @@
-<?php
-    session_start();
+<!-- <?php
+session_start();
+    var_dump($_FILES);  
 
-    if(isset($_SESSION['Empty_Input'])) {
-        echo "Bạn đã điền thiếu thông tin vui lòng nhập lại";
-        unset($_SESSION['Empty_Input']);
+    //khai bao bien
+    $target_file = "";
+    $fileSize = "";
+    $upload = "";
+
+    $target_dir = "image/";
+    if(isset($_FILES["thumbnail"])) {
+        $target_file = $target_dir . basename($_FILES["thumbnail"]["name"]);
     }
+   
+    echo "<br>$target_file";
 
-    // var_dump($_COOKIE);
+    //lay phan mo rong 
+    // $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    // echo $imageFileType;
 
-?> 
+
+    // $filename = '/path/to/foo.txt';
+    if(file_exists($target_file)) {
+        echo "</br>".'File da ton tai tren sever k duoc ghi de';
+    } 
+    else {
+        echo "</br>".'file chua ton tai';
+    }
+    
+
+    echo '<pre>';
+        print_r($_SESSION);
+    echo '<pre>';
+
+    if(isset($_FILES['thumbnail'])) {
+    $fileSize = $_FILES['thumbnail']['size'];
+    $upload = move_uploaded_file($_FILES["thumbnail"]["tmp_name"],$target_file);
+    }
+    echo $fileSize;
+
+    
+
+    var_dump($upload);
+    
+
+?> -->
+
 
 <!DOCTYPE html>
 <html>
@@ -41,7 +77,7 @@
             </div>
             <div class="form-group">
                 <label for="">thumbnail</label>
-                <input type="text" class="form-control" id="" placeholder="" name="thumbnail">
+                <input type="file" class="form-control" id="" placeholder="" name="thumbnail">
             </div>
             <div class="form-group">
                 <label for="">category_id</label>

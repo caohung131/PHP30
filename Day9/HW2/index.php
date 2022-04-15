@@ -199,9 +199,10 @@
                                     <a href="categorie_add.php" class="btn btn-primary">add new category</a>
                                         
                                         <tr>
-                                            <th>ID</th>
+                                            <th>No</th>
                                             <th>Name</th>
                                             <th>Description</th>
+                                            <th>thumbnail</th>
                                             <th>Category_id</th>
                                             <th>Content</th>
                                             <th>Created_at</th>
@@ -210,11 +211,13 @@
                                     </thead>
                                     <tbody>
 
+                                    <?php $i = 1 ?>
                                     <?php foreach($posts as $post) { ?>
                                         <tr>
-                                            <td><?=$post['id']?></td>
+                                            <td><?=$i ?></td>
                                             <td><?=$post['title']?></td>
                                             <td><?=$post['description']?></td>
+                                            <td><img src="<?=$post['thumbnail']?>" alt=""></td>
                                             <td><?=$post['category_id']?></td>
                                             <td><?=$post['content']?></td>
                                             <td><?=$post['created_at']?></td>
@@ -226,6 +229,7 @@
                                             </td>
                                         </tr>
                                         
+                                    <?php $i++; ?>
                                     <?php } ?>
                                     </tbody>
                                 </table>
