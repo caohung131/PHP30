@@ -11,6 +11,20 @@
         <!--end sidebar -->
 
                 <main>
+                        <!-- cookie -->
+                        <?php if(isset($_COOKIE['msg'])) { ?>
+                            <div class="alert alert-sucsess">
+                                <strong>Congratulations!</strong> <?php $_COOKIE['msg']; ?>
+                            </div>
+                        <?php }?>
+
+                        <?php if(isset($_COOKIE['error'])) { ?>
+                            <div class="alert alert-danger">
+                                <strong>Opp!</strong> <?php $_COOKIE['error']; ?>
+                            </div>
+                        <?php }?>
+
+
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">List category</h1>
                         <ol class="breadcrumb mb-4">
@@ -76,6 +90,7 @@
                         </div>
 
                         <!-- data Table -->
+                        
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -83,9 +98,9 @@
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
-                                 
+
                                     <thead>   
-                                        <a href="categorie_add.php" class="btn btn-primary">add new category</a>
+                                        <a href="index.php?mod=category&action=create" class="btn btn-primary">add new category</a>
                                         <tr>
                                             <th>id</th>
                                             <th>Name</th>
@@ -109,8 +124,8 @@
 
                                             <td>
                                                 <a href="categorie_detail.php?id=<?=$categorie['id']?>" class="btn btn-primary">Detail</a>
-                                                <a href="categorie_edit.php?id=<?=$categorie['id']?>" class="btn btn-success">Edit</a>
-                                                <a href="category_delete.php?id=<?=$categorie['id']?>" class="btn btn-danger">Delete</a>
+                                                <a href="index.php?mod=category&action=edit&id=<?=$categorie['id']?>" class="btn btn-success">Edit</a>
+                                                <a href="index.php?mod=category&action=delete&id=<?=$categorie['id']?>" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                     
