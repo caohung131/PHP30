@@ -1,5 +1,7 @@
 <?php   
-    echo 'index';
+
+    // echo 'index';
+    date_default_timezone_set("Asia/Ho_Chi_Minh");
 
     $mod = $_GET['mod'];
     $action = $_GET['action'];
@@ -9,9 +11,9 @@
 
     // echo $path;
 
-    echo $mod. ' - '. $action;
+    // echo $mod. ' - '. $action;
 
-    echo "<br/>";
+    // echo "<br/>";
 
     // var_dump($nameController);
     // die();

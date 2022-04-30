@@ -20,6 +20,15 @@
             require_once("./views/categories/create.php");
         }
 
+        public function detail() {
+            $id = $_GET['id'];
+            $categorie = $this->model->detail($id);
+          
+            // print_r(var_dump($categorie));
+            //  die();
+            require_once("./views/categories/detail.php");
+        }
+
         public function edit() {
             $id = $_GET['id'];
             $category = $this->model->getCatById($id);  
@@ -60,6 +69,7 @@
             }
         }
 
+        
         public function delete()
         {
             $id = $_GET['id'];
@@ -85,6 +95,7 @@
             $data = $_POST;
             $data['slug'] = $this->createSlug($data['name']);
             $data['created_at'] = date('Y-m-d H:s:i');
+            $data['update_at'] = date('Y-m-d H:s:i');
 
             if ($_FILES["thumnail"]["name"] = "") { 
                 $path = "";

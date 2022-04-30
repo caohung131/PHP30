@@ -85,7 +85,7 @@
                                 <table id="datatablesSimple">
                                  
                                     <thead>   
-                                        <a href="categorie_add.php" class="btn btn-primary">add new user</a>
+                                        <a href="index.php?mod=user&action=create" class="btn btn-primary">add new user</a>
                                         <tr>
                                             <th>id</th>
                                             <th>mobile</th>
@@ -107,15 +107,15 @@
                                             <td><?=$categorie['email']?></td>
                                             <td><?=$categorie['name']?></td>
                                             <td><?=$categorie['password']?></td>
-                                            <td><img src="<?=$categorie['avatar']?>" alt="" width="200px" height="200px"></td>
+                                            <td><img src="upload\<?=$categorie['avatar']?>" alt="" width="200px" height="200px"></td>
                                             <td><?=$categorie['status']?></td>
                                             <td><?=$categorie['created_at']?></td>
                                             <td><?=$categorie['update_at']?></td>
 
                                             <td>
-                                                <a href="categorie_detail.php?id=<?=$categorie['id']?>" class="btn btn-primary">Detail</a>
-                                                <a href="categorie_edit.php?id=<?=$categorie['id']?>" class="btn btn-success">Edit</a>
-                                                <a href="category_delete.php?id=<?=$categorie['id']?>" class="btn btn-danger">Delete</a>
+                                                <a href="index.php?mod=user&action=detail&id=<?=$categorie['id']?>" class="btn btn-primary">Detail</a>
+                                                <a href="index.php?mod=user&action=edit&id=<?=$categorie['id']?>" class="btn btn-success">Edit</a>
+                                                <a href="index.php?mod=user&action=delete&id=<?=$categorie['id']?>" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>
                                     

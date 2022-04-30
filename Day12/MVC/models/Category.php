@@ -34,5 +34,16 @@
             $query = "DELETE FROM categorys WHERE id = " . $categoryId;
             return $this->conn->query($query);
         }
+
+        //detail
+        public function detail($id) {
+            $query = "SELECT * FROM categorys WHERE id=".$id;
+
+            $result =   $this->conn->query($query)->fetch_assoc();
+
+            return $result;
+
+            // $categorie = $result->fetch_assoc();
+        }
     }
 ?>  

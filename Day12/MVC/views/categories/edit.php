@@ -19,7 +19,7 @@
                     <input type="hidden" name = "id" value="<?=$category['id']?>" >
                     <div class="form-group">
                         <label for="">ID</label>
-                        <input type="text" class="form-control" id="" placeholder="" name="name" value="<?=$category['id']?>" disabled = "true">
+                        <input type="text" class="form-control" id="" placeholder="" name="id" value="<?=$category['id']?>" disabled = "true">
                     </div>
                     <div class="form-group">
                         <label for="">Name</label>

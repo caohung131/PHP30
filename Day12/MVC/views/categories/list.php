@@ -118,12 +118,12 @@
                                             <td><?=$categorie['id']?></td>
                                             <td><?=$categorie['name']?></td>
                                             <td><?=$categorie['description']?></td>
-                                            <td><?=$categorie['thumbnail']?></td>
+                                            <td><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="150px" height="150px"></td>
                                             <td><?=$categorie['parent_id']?></td>
                                             <td><?=$categorie['created_at']?></td>
 
                                             <td>
-                                                <a href="categorie_detail.php?id=<?=$categorie['id']?>" class="btn btn-primary">Detail</a>
+                                                <a href="index.php?mod=category&action=detail&id=<?=$categorie['id']?>" class="btn btn-primary">Detail</a>
                                                 <a href="index.php?mod=category&action=edit&id=<?=$categorie['id']?>" class="btn btn-success">Edit</a>
                                                 <a href="index.php?mod=category&action=delete&id=<?=$categorie['id']?>" class="btn btn-danger">Delete</a>
                                             </td>

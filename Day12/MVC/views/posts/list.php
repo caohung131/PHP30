@@ -85,7 +85,7 @@
                                 <table id="datatablesSimple">
                                  
                                     <thead>   
-                                        <a href="categorie_add.php" class="btn btn-primary">add new category</a>
+                                        <a href="index.php?mod=post&action=create" class="btn btn-primary">add new category</a>
                                         <tr>
                                             <th>id</th>
                                             <th>title</th>
