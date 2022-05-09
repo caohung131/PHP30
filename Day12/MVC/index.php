@@ -1,7 +1,8 @@
 <?php   
-
     // echo 'index';
     date_default_timezone_set("Asia/Ho_Chi_Minh");
+
+    session_start();
 
     $mod = $_GET['mod'];
     $action = $_GET['action'];

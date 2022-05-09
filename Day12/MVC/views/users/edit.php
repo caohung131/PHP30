@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label for="">Avatar</label>
-                <img src="upload/<?=$categorie['avatar'] ?>" alt="">
+                <img width="250px" height="250px" style="border-radius: 20%;" src="upload/<?=$categorie['avatar'] ?> " alt="">
                 <input type="file" class="form-control" id="" placeholder="" name="thumbnail"  >
             </div>
 

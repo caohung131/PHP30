@@ -1,4 +1,7 @@
 <?php
+
+use LDAP\Result;
+
     require_once('./models/Query.php');
 
     class User extends Query
@@ -7,7 +10,7 @@
 
         public function create($data)
         {
-            $query = "INSERT INTO users(name,slug,mobile,email,password,avatar,status,created_at, update_at) VALUES('" . $data['name'] . "','" . $data['slug'] . "','" . $data['mobile'] . "','" . $data['email'] .  "','" . md5($data['password']) ."','" . $data['thumbnail'] .  "','" .$data['status'] .  "','" . $data['created_at'] .  "','" . $data['update_at'] . "')";
+            $query = "INSERT INTO users(name,slug,mobile,email,password,avatar,status,created_at, update_at) VALUES('" . $data['name'] . "','" . $data['slug'] . "','" . $data['mobile'] . "','" . $data['email'] .  "','" . ($data['password']) ."','" . $data['thumbnail'] .  "','" .$data['status'] .  "','" . $data['created_at'] .  "','" . $data['update_at'] . "')";
             // var_dump($query);die();
             
             return $this->conn->query($query);
@@ -46,6 +49,13 @@
             $query = "UPDATE users SET name = '" . $data['name'] . "',mobile = '" . $data['mobile'] .$data['thumbnail']. "' WHERE id = " . $id;
             // var_dump($query); die();
             return $this->conn->query($query);
+        }
+
+        public function checkLogin($email, $password) {
+            $query = " SELECT * FROM users WHERE email= " . " '". $email . "' ". " AND " . " password = " . " '". $password  ."' " ;
+            // var_dump($query);
+            $result = $this->conn->query($query);
+            return $user = $result->fetch_assoc();
         }
 
 

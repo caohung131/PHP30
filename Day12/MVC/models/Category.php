@@ -24,7 +24,8 @@
         //update
         public function updateCate($data)
         {
-            $query = "UPDATE categorys SET name = '" . $data['name'] . "',description = '" . $data['description'] .$data['thumbnail']. "' WHERE id = " . $data['id'];
+            $query = "UPDATE categorys SET name = '" . $data['name'] . "',description = '" . $data['description'] .$data['thumbnail']. "',slug = '" . $data['slug'].  "',parent_id = '" . $data['parent_id'] . "',created_at = '" . $data['created_at'] . "' WHERE id = " . $data['id'];
+            // var_dump($query); die();
             return $this->conn->query($query);
         }
 
@@ -38,7 +39,7 @@
         //detail
         public function detail($id) {
             $query = "SELECT * FROM categorys WHERE id=".$id;
-
+            
             $result =   $this->conn->query($query)->fetch_assoc();
 
             return $result;

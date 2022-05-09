@@ -14,26 +14,39 @@
     <h3 align="center">DevMind - Education And Technology Group</h3>
     <h3 align="center">Add New Category</h3>
     <hr>
-        <form action="index.php?mod=category&action=store" method="POST" role="form" enctype="multipart/form-data">
+        <form action="index.php?mod=post&action=store" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control" id="" placeholder="" name="name">
             </div>
             <div class="form-group">
-                <label for="">parent_id</label>
-                <input type="text" class="form-control" id="" placeholder="" name="parent_id">
+                <label for="">Title</label>
+                <input type="text" class="form-control" id="" placeholder="" name="title">
             </div>
             <div class="form-group">
-                <label for="">Avatar</label>
+                <label for="">Description</label>
+                <input type="text" class="form-control" id="" placeholder="" name="description">
+            </div>
+            <div class="form-group">
+                <label for="">Thumbnail</label>
                 <input type="file" class="form-control" id="" placeholder="" name="thumbnail">
             </div>
             <div class="form-group">
                 <label for="">Description</label>
                 <input type="text" class="form-control" id="" placeholder="" name="description">
             </div>
-           
+            <div class="form-group">
+                <label for="">User id</label>
+                <input type="text" class="form-control" id="" placeholder="" name="user_id">
+            </div>
+            <div class="form-group">
+                <label for="">Content</label>
+                <input type="text" class="form-control" id="" placeholder="" name="content">
+            </div>
+
             <button type="submit" class="btn btn-primary">Create</button>
         </form>
+        
     </div>
 </body>
 

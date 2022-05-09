@@ -1,18 +1,35 @@
 <?php
     require_once("models/Category.php");
+    require_once("./controllers/AdminController.php");
 
-    class CategoryController
+    class CategoryController extends AdminController
     {
         protected $model;
 
         public function __construct()
         {
+            parent::__construct();
             $this->model = new Category(); 
         }
 
+        //chi uyen code cho category parent id
         public function index(){
             // $model = new Category();
-            $categories = $this->model->get();
+            // var_dump($_SESSION['auth']); die();
+            $categories = array(); // tao mang chong chua toan du lieu 
+            $list_category = $this->model->get(); //query toan bo du lieu tu DB
+            foreach($list_category as $key => $category){
+                $id = $category['parent_id']; // Duyet mang lay toan bo id cha
+                if($id){ // co id cha thi hien chi tiet id qua DB
+                    $category_parent = $this->model->detail($id);
+                    // var_dump($category_parent); die();
+                    $category['parent_name'] = $category_parent['name']; // them thuoc tinh ParentName lay dc tu ten cua cai id cha vua Query
+                }else{
+                    $category['parent_name'] = ""; //neu chua co thi gan cho chuoi chong
+                }
+                $categories[]=$category; //gan tat ca category vao mang moi
+            }
+        
             require_once("./views/categories/list.php");
         }
 
@@ -31,6 +48,12 @@
 
         public function edit() {
             $id = $_GET['id'];
+            $data = $this->model->detail($id);
+            
+
+            // echo '<pre>';
+            //     var_dump($data); die();
+            // echo '</pre>';
             $category = $this->model->getCatById($id);  
             // var_dump($category);
             
@@ -41,6 +64,9 @@
         public function update()
         {
             $data = $_POST;
+            $data['created_at'] = date('Y-m-d H:s:i');
+            $data['update_at'] = date('Y-m-d H:s:i');
+            $data['slug'] = $this->createSlug($data['name']);
             //check avata has update
             if ($_FILES["thumbnail"]['name'] == '') {
                 $path = '';

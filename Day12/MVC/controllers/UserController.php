@@ -1,15 +1,36 @@
 <?php
     require_once("./models/User.php");
-    class UserController {
+    require_once("./controllers/AdminController.php");
+
+    class UserController extends AdminController {
             protected $model;
 
             public function __construct()
             {
+                parent::__construct();
                 $this->model = new User(); 
             }
 
         public function index() {
-            $users = $this->model->get();
+
+            $users = array();
+            $listUser = $this->model->get();
+            foreach($listUser as $user){
+                // if($user['parent_id']) {
+                //     $idParent = $user['parent_id'];
+                // }
+
+                // echo '<pre>';
+                //     var_dump($listUser); die();
+                // echo '</pre>';
+                // if($idParent){
+                //     $userParent = $this->model->detail($idParent);
+                //     $user['parent_name'] = $userParent['name'];
+                // }else{
+                //     $user['parent_name'] = "";
+                // }
+                $users[]=$user;
+            }
 
             // var_dump($users);
             require_once("./views/users/list.php");
@@ -100,7 +121,7 @@
 
         public function detail() {
             $id = $_GET['id'];
-            $categorie = $this->model->detail($id);
+            $categorie= $this->model->detail($id);
             // var_dump($categorie); die();
             require_once("./views/users/detail.php");
         }

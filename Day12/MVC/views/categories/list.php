@@ -30,64 +30,8 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">List category</li>
                         </ol>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Area Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Bar Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                        </div>
+                        
+                    
 
                         <!-- data Table -->
                         
@@ -104,10 +48,11 @@
                                         <tr>
                                             <th>id</th>
                                             <th>Name</th>
-                                            <th>description</th>
-                                            <th>thumbnail</th>
-                                            <th>parent_id</th>
-                                            <th>created_at</th>
+                                            <th>Slug</th>
+                                            <th>Description</th>
+                                            <th>Thumbnail</th>
+                                            <th>Parent name</th>
+                                            <th>Created at</th>
                                             <th>Tool</th>
                                         </tr>
                                     </thead>
@@ -117,9 +62,10 @@
                                         <tr>
                                             <td><?=$categorie['id']?></td>
                                             <td><?=$categorie['name']?></td>
+                                            <td><?=$categorie['slug']?></td>
                                             <td><?=$categorie['description']?></td>
                                             <td><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="150px" height="150px"></td>
-                                            <td><?=$categorie['parent_id']?></td>
+                                            <td><?=$categorie['parent_name']?></td>
                                             <td><?=$categorie['created_at']?></td>
 
                                             <td>
