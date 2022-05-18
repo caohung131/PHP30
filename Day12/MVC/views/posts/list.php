@@ -17,26 +17,19 @@
                             <li class="breadcrumb-item active">Post category</li>
                         </ol>
                         
-
+                        <a href="index.php?mod=post&action=create" class="btn btn-primary">Thêm mới bài viết</a>
                         <!-- data Table -->
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable
-                            </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                  
                                     <thead>   
-                                        <a href="index.php?mod=post&action=create" class="btn btn-primary">add new category</a>
                                         <tr>
                                             <th>id</th>
-                                            <th>slug</th>
                                             <th>title</th>
                                             <th>description</th>
                                             <th>thumbnail</th>
                                             <th>user name</th>
-                                            <th>content</th>
                                             <th>created_at</th>
                                             <th>Tool</th>
                                         </tr>
@@ -46,12 +39,10 @@
                                     <?php  foreach($posts as $key => $categorie) {?>
                                         <tr>
                                             <td><?=$categorie['id']?></td>
-                                            <td><?=$categorie['slug']?></td>
                                             <td><?=$categorie['title']?></td>
                                             <td><?=$categorie['description']?></td>
-                                            <td><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="200px" height="200px"></td>
+                                            <td><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="100px" height="100px"></td>
                                             <td><?=$categorie['parentNameUser']?></td>
-                                            <td><?=$categorie['content']?></td>
                                             <td><?=$categorie['created_at']?></td>
 
                                             <td>

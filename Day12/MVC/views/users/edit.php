@@ -11,8 +11,8 @@
         <!--end sidebar -->
         <body>
     <div class="container">
-    <h3 align="center">DevMind - Education And Technology Group</h3>
-    <h3 align="center">Add New Category</h3>
+    <h3 align="center">Edit page</h3>
+    <h3 align="center">User</h3>
     <hr>
         <form action="index.php?mod=user&action=updateUser&id=<?=$categorie['id']?>" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">

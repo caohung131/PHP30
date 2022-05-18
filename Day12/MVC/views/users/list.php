@@ -49,7 +49,7 @@
                                             <td><?=$categorie['email']?></td>
                                             <td><?=$categorie['name']?></td>
                                             <td><?=$categorie['password']?></td>
-                                            <td><img src="upload\<?=$categorie['avatar']?>" alt="" width="200px" height="200px"></td>
+                                            <td><img src="upload\<?=$categorie['avatar']?>" alt="" width="100px" height="100px"></td>
                                             <td><?=$categorie['status']?></td>
                                             <td><?=$categorie['created_at']?></td>
                                             <td><?=$categorie['update_at']?></td>

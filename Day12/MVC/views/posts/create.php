@@ -41,8 +41,9 @@
             </div>
             <div class="form-group">
                 <label for="">Content</label>
-                <input type="text" class="form-control" id="" placeholder="" name="content">
+                <textarea id="summernote" name="content" class="form-control" rows="20" cols="70"></textarea>
             </div>
+
 
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

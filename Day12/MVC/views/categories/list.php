@@ -59,12 +59,12 @@
                                     <tbody>
                                        
                                     <!-- <?php  foreach($categories as $key => $categorie) {?> -->
-                                        <tr>
+                                        <tr >
                                             <td><?=$categorie['id']?></td>
                                             <td><?=$categorie['name']?></td>
                                             <td><?=$categorie['slug']?></td>
                                             <td><?=$categorie['description']?></td>
-                                            <td><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="150px" height="150px"></td>
+                                            <td><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="100px" height="100px" ></td>
                                             <td><?=$categorie['parent_name']?></td>
                                             <td><?=$categorie['created_at']?></td>
 

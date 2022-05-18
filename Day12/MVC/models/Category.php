@@ -1,8 +1,8 @@
 <?php
 
-    require_once("models/Query.php");
+    require_once("models/BaseModel.php");
 
-    class Category extends Query
+    class Category extends BaseModel
     {
         protected $tableName = "categorys";
 
@@ -30,11 +30,11 @@
         }
 
         //delete
-        function delete($categoryId)
-        {
-            $query = "DELETE FROM categorys WHERE id = " . $categoryId;
-            return $this->conn->query($query);
-        }
+        // function delete($categoryId)
+        // {
+        //     $query = "DELETE FROM categorys WHERE id = " . $categoryId;
+        //     return $this->conn->query($query);
+        // }
 
         //detail
         public function detail($id) {

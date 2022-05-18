@@ -23,16 +23,12 @@
                  
                 $posts[] = $post;
             }
-            // echo '<pre>';
-            //     var_dump($posts); die();
-            //     echo '/<pre>';
-            
-            
             require_once("./views/posts/list.php");
        }
 
        public function create() 
        {
+
              require_once("./views/posts/create.php");
 
        }
@@ -48,8 +44,10 @@
        public function edit() 
        {
             $id = $_GET['id'];
+            // $data['created_at'] = date('Y-m-d H:s:i');
+
             $category = $this->model->detail($id);
-            // var_dump($categories); die();
+            // var_dump($category); die();
              require_once("./views/posts/edit.php");
            
        }
@@ -57,9 +55,9 @@
        public function detail() 
        {
             $id = $_GET['id'];
-            $categorie = $this->model->detail($id);
+            $post = $this->model->detail($id);
             // var_dump($category); die();
-            require_once("./views/posts/detail.php");
+            require_once("./views/fontend/post.php");
        }
 
 
@@ -93,6 +91,8 @@
         {
             $data = $_POST;
             //check avata has update
+            $data['created_at'] = date('Y-m-d H:s:i');
+            
             if ($_FILES["thumbnail"]['name'] == '') {
                 $path = '';
             } else {

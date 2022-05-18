@@ -53,7 +53,7 @@ use LDAP\Result;
 
         public function checkLogin($email, $password) {
             $query = " SELECT * FROM users WHERE email= " . " '". $email . "' ". " AND " . " password = " . " '". $password  ."' " ;
-            // var_dump($query);
+            var_dump($query);
             $result = $this->conn->query($query);
             return $user = $result->fetch_assoc();
         }

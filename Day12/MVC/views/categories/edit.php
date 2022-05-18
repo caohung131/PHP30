@@ -12,10 +12,10 @@
 
         <body>
             <div class="container">
-            <h3 align="center">DevMind - Education And Technology Group</h3>
-            <h3 align="center">Add New Category</h3>
+            <h3 align="center">Edit page</h3>
+            <h3 align="center">Category</h3>
             <hr>
-                <form action="index.php?mod=category&action=update" method="POST" role="form" enctype="multipart/form-data">
+                <form action="index.php?mod=category&action=update&id=<?=$category['id']?>" method="POST" role="form" enctype="multipart/form-data">
                     <input type="hidden" name = "id" value="<?=$category['id']?>" >
                     <div class="form-group">
                         <label for="">ID</label>
@@ -40,12 +40,26 @@
                     </div>
                     <div class="form-group">
                         <label for="">parent_id</label>
-                        <input type="text" class="form-control" id="" placeholder="" name="parent_id" value="<?=$category['parent_id']?>">
+                        <!-- <input type="text" class="form-control" id="" placeholder="" name="parent_id" value="<?=$category['parent_id']?>"> -->
+                     
+                           <select name="parent_id" id="" class="form-control">
+                                <?php
+                                   
+                                    foreach ($categories as $key => $cate) {
+                                        $selected = "";
+                                        if($cate['id'] == $category['parent_id']) {
+                                            $selected = 'selected';
+                                        }
+                                        echo '
+                                            <option value ="' . $cate['id'] . '"' . ' ' . $selected . ' ' . '>' .$cate['name'].'</option>
+
+                                        ';
+                                    }
+                                ?>
+                            </select>
+                        
                     </div>
-                    <div class="form-group">
-                        <label for="">created_at</label>
-                        <input type="time" class="form-control" id="" placeholder="" name="created_at" value="<?=$category['created_at']?>">
-                    </div>
+                    
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>

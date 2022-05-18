@@ -9,6 +9,7 @@
         public function handleLogin() {
             $userModel = new User();
             $user = $userModel->checkLogin($_POST['email'], $_POST['password']);
+            // var_dump($user); die();
             if(empty($user)) {
                 echo 'Login false';
                 header("Location: index.php?mod=auth&action=login");

@@ -1,5 +1,6 @@
 <?php
-    class AdminController 
+    require_once("controllers/BaseController.php");
+    class AdminController extends BaseController
     {
         public function __construct()
         {

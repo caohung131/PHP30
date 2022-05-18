@@ -5,7 +5,8 @@
     session_start();
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
-
+    
+    // echo '1'; die();
     $mod = $_GET['mod'];
     $action = $_GET['action'];
     $nameController = ucfirst($mod) . "Controller";

@@ -1,5 +1,6 @@
 body {
   padding: 50px;
+  text-align: center;
   }
   * {
   margin: 0;
@@ -54,20 +55,20 @@ body {
   display: block;
   }
   .form-tt input[type=submit] {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.2;
-  padding: 0 20px;
-  min-width: 120px;
-  height: 50px;
-  border-radius: 25px;
-  background: #fff;
-  position: relative;
-  z-index: 1;
-  border: 0;
-  outline: 0;
-  display: block;
-  margin: 30px auto;
+    font-size: 16px;
+    color: #555;
+    line-height: 50px;
+    padding: 0 10px;
+    width: 40%;
+    height: 50px;
+    border-radius: 25px;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    outline: 0;
+    display: block;
+    margin: 30px auto;
   }
 
   #checkbox {
@@ -84,9 +85,8 @@ body {
    a.submitRegister  {
     font-size: 16px;
     color: #555;
-    line-height: 1.2;
-    padding: 0 20px;
-    min-width: 120px;
+    line-height: 50px;
+    width: 40%;
     height: 50px;
     border-radius: 25px;
     background: #fff;
@@ -99,3 +99,7 @@ body {
     text-decoration: none;
   }
   
+#form2{
+  display: flex;
+  justify-content: center;
+}

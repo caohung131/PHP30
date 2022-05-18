@@ -1,9 +1,10 @@
 <?php
 if(!isset($_COOKIE['Success'])) {
-     echo "Cookie chưa được tạo!";
+     echo "Vui lòng đăng nhập";
 } else {
-     echo "Cookie '" . $_COOKIE['Success'] . "' đã được tạo!<br>";
+     echo "Tài khoản bạn '" . $_COOKIE['Success'] . "' đã được tạo!<br>";
      echo "Giá trị là: " . $_COOKIE['Success'];
+     
 }
 ?>
 <!DOCTYPE html>
@@ -17,8 +18,8 @@ if(!isset($_COOKIE['Success'])) {
 </head>
 <body>
 
-
-        <form action="index.php?mod=auth&action=handleLogin" method="POST" role="form" enctype="multipart/form-data">
+        <br>
+        <form action="index.php?mod=auth&action=handleLogin" method="POST" role="form" enctype="multipart/form-data" id="form2"> 
             <div class="form-tt">
                 <h2>Đăng nhập</h2>
                 <form action="#" method="post" name="dang-ky">
@@ -26,9 +27,9 @@ if(!isset($_COOKIE['Success'])) {
                 <input type="password" name="password" placeholder="Nhập mật khẩu" />
                 <input type="checkbox" id="checkbox" name="checkbox"><label class="checkbox-text">Nhớ đăng nhập lần sau</label>
                 <input type="submit" name="submit" value="Đăng nhập" />
-                <button><a class="submitRegister" href="index.php?mod=auth&action=register">Đăng kí</a></button>
+                <a class="submitRegister" href="index.php?mod=auth&action=register">Đăng kí</a>
                 
-                <label class="psw-text">Quên mật khẩu</label>
+                
                 </form>
 
             </div>
