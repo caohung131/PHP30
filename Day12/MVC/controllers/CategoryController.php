@@ -46,6 +46,8 @@
         }
 
         public function create() {
+            $categories = $this->model->select();
+
             require_once("./views/categories/create.php");
         }
 

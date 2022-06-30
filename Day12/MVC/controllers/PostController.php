@@ -13,12 +13,16 @@
        public function index()
        {
             $posts = array();
-            $listPost = $this->model->get();
+            $listPost = $this->model->select();
+            // var_dump($listPost); die();
             foreach($listPost as $post) {
                 $idParentPost = $post['user_id'];
+                // var_dump($idParentPost); die();
 
                 $parentPost = $this->model->detailUser($idParentPost);
-               
+                
+                // var_dump($parentPost); die();
+
                 $post['parentNameUser'] = $parentPost['name'];
                  
                 $posts[] = $post;
@@ -45,6 +49,21 @@
        {
             $id = $_GET['id'];
             // $data['created_at'] = date('Y-m-d H:s:i');
+            $posts = $this->model->select();
+        
+
+            $getUser = $this->model->getAllUser();
+            
+
+            foreach($posts as $key => $post) {
+                $user = $this->model->detailUser($post['user_id']);
+                $user['name'];
+
+                echo '<pre>';
+                    var_dump($user); die();
+                echo '</pre>';
+            }
+            var_dump($user['id']); die();
 
             $category = $this->model->detail($id);
             // var_dump($category); die();

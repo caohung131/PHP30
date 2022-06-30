@@ -39,8 +39,29 @@
                         <input type="file" class="form-control" id="" placeholder="" name="thumbnail" value="" >
                     </div>
                     <div class="form-group">
-                        <label for="">parent_id</label>
-                        <input type="text" class="form-control" id="" placeholder="" name="user_id" value="<?=$category['user_id']?>">
+
+                            <label for="">Poster</label> <br> 
+                            <select name="parent_id" id="" class="form-control">
+                                <?php
+                                    
+                                    foreach ($getUser as $key => $post) {
+                                        // var_dump($post['user_id']); die();
+                                        $selected = "";
+                                        // var_dump($post['user_id']);
+
+                                        if(isset($post['id']))  {
+                                            
+                                            $selected = 'selected';
+                                        }
+                                        // var_dump($user); die();
+
+                                        echo '
+                                            <option value ="' . $post['id'] . '"' . ' ' . $selected . ' ' . '>' .$post['name'].'</option>
+
+                                        ';
+                                    }
+                                ?>
+                            </select>
                     </div>
                     <div class="form-group">
                         <label for="">Content</label>

@@ -9,7 +9,7 @@
         //create
         public function create($data)
         {
-            $query = "INSERT INTO categorys(name,slug,description,thumbnail,created_at) VALUES('" . $data['name'] . "','" . $data['slug'] . "','" . $data['description'] . "','" . $data['thumbnail'] .  "','" . $data['created_at'] . "')";
+            $query = "INSERT INTO categorys(name,slug,description,thumbnail,created_at, parent_id) VALUES('" . $data['name'] . "','" . $data['slug'] . "','" . $data['description'] . "','" . $data['thumbnail'] .  "','" . $data['created_at'] . "','" . $data['parent_id'] .  "')";
             return $this->conn->query($query);
         }
         

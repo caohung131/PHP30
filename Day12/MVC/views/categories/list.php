@@ -45,7 +45,7 @@
 
                                     <thead>   
                                         <a href="index.php?mod=category&action=create" class="btn btn-primary">add new category</a>
-                                        <tr>
+                                        <tr style=" text-align: center;">
                                             <th>id</th>
                                             <th>Name</th>
                                             <th>Slug</th>
@@ -59,12 +59,12 @@
                                     <tbody>
                                        
                                     <!-- <?php  foreach($categories as $key => $categorie) {?> -->
-                                        <tr >
+                                        <tr style=" text-align: center;">
                                             <td><?=$categorie['id']?></td>
                                             <td><?=$categorie['name']?></td>
                                             <td><?=$categorie['slug']?></td>
                                             <td><?=$categorie['description']?></td>
-                                            <td><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="100px" height="100px" ></td>
+                                            <td ><img src="upload/<?=$categorie['thumbnail']?>" alt="" width="100px" height="100px" style="border-radius: 10%;"></td>
                                             <td><?=$categorie['parent_name']?></td>
                                             <td><?=$categorie['created_at']?></td>
 

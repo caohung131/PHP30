@@ -1,6 +1,6 @@
 <?php
-    require_once("./models/Query.php");
-    class Post extends Query
+    require_once("./models/BaseModel.php");
+    class Post extends BaseModel
     {
         protected $tableName = 'posts';
 
@@ -31,6 +31,19 @@
             $query = "SELECT * FROM users WHERE id = " . $userId;
             $result = $this->conn->query($query);
             return $result->fetch_assoc();
+            
+        }
+
+        function getAllUser()
+        {
+            $query = "SELECT * FROM users";
+            $result = $this->conn->query($query);
+
+            $data = array();
+            while($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            return $data;
         }
 
         public function updateCate($data)

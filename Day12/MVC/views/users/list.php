@@ -28,7 +28,7 @@
                                  
                                     <thead>   
                                         <a href="index.php?mod=user&action=create" class="btn btn-primary">add new user</a>
-                                        <tr>
+                                        <tr style=" text-align: center;">
                                             <th>id</th>
                                             <th>mobile</th>
                                             <th>email</th>
@@ -43,13 +43,13 @@
                                     <tbody>
                                        
                                     <?php  foreach($users as $key => $categorie) {?>
-                                        <tr>
+                                        <tr style=" text-align: center;">
                                             <td><?=$categorie['id']?></td>
                                             <td><?=$categorie['mobile']?></td>
                                             <td><?=$categorie['email']?></td>
                                             <td><?=$categorie['name']?></td>
                                             <td><?=$categorie['password']?></td>
-                                            <td><img src="upload\<?=$categorie['avatar']?>" alt="" width="100px" height="100px"></td>
+                                            <td><img src="upload\<?=$categorie['avatar']?>" alt="" width="100px" height="100px"  style="border-radius: 10%;"></td>
                                             <td><?=$categorie['status']?></td>
                                             <td><?=$categorie['created_at']?></td>
                                             <td><?=$categorie['update_at']?></td>

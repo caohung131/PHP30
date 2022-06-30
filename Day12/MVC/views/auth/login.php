@@ -28,6 +28,7 @@ if(!isset($_COOKIE['Success'])) {
                 <input type="checkbox" id="checkbox" name="checkbox"><label class="checkbox-text">Nhớ đăng nhập lần sau</label>
                 <input type="submit" name="submit" value="Đăng nhập" />
                 <a class="submitRegister" href="index.php?mod=auth&action=register">Đăng kí</a>
+                <a class="submitRegister" href="index.php?mod=index&action=index">Quay lại</a>
                 
                 
                 </form>

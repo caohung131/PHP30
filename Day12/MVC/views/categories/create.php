@@ -31,6 +31,27 @@
                 <label for="">Description</label>
                 <input type="text" class="form-control" id="" placeholder="" name="description">
             </div>
+            <div class="form-group">
+                        <label for="">parent_id</label>
+                        <!-- <input type="text" class="form-control" id="" placeholder="" name="parent_id" value="<?=$category['parent_id']?>"> -->
+                     
+                           <select name="parent_id" id="" class="form-control">
+                                <?php
+                                   
+                                    foreach ($categories as $key => $cate) {
+                                        $selected = "";
+                                        if($cate['id'] == $category['parent_id']) {
+                                            $selected = 'selected';
+                                        }
+                                        echo '
+                                            <option value ="' . $cate['id'] . '"' . ' ' . $selected . ' ' . '>' .$cate['name'].'</option>
+
+                                        ';
+                                    }
+                                ?>
+                            </select>
+                        
+            </div>
            
             <button type="submit" class="btn btn-primary">Create</button>
         </form>

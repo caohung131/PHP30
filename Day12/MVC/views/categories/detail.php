@@ -24,7 +24,7 @@
                 <h3>Name: <?= $categorie['name']?></h3>
                 <h3>Slug:<?= $categorie['slug']?></h3>
                 <h3>Description: <?= $categorie['description']?></h3>
-                <h3>Thumbnail:<br/><img width="550px" height="450px" src="upload/<?= $categorie['thumbnail']?>" alt="" ></h3>
+                <h3>Thumbnail:<br/><img width="550px" height="450px" src="upload/<?= $categorie['thumbnail']?>" alt=""  style="border-radius: 10%;"></h3>
                 <h3>Parent_id: <?= $categorie['parent_id']?></h3>
                 <h3>Created_at: <?= $categorie['created_at']?></h3>
 

@@ -1,6 +1,7 @@
 <?php
     require_once("./controllers/BaseController.php");
     require_once("./models/Post.php");
+    require_once("./models/Comment.php");
 
 
     class IndexController extends BaseController {
@@ -8,19 +9,24 @@
        protected $model;
 
        public function index() {
-            $model = new Post();
+           
+
+            $modelPost = new Post();
+            $modelComment = new Comment();
             $posts = array();
-            $listPost = $model->get();
+            $listPost = $modelPost->select();
             foreach($listPost as $post) {
                 $idParentPost = $post['user_id'];
 
-                $parentPost = $model->detailUser($idParentPost);
+                $parentPost = $modelPost->detailUser($idParentPost);
             
-                $post['parentNameUser'] = $parentPost['name'];
+                // $post['parentNameUser'] = $parentPost['name'];
                 
                 $posts[] = $post;
             }
-        
+            
+            $coments = $modelComment->select();
+
             require_once("./views/fontend/index.php");
      }
 

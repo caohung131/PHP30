@@ -20,9 +20,9 @@
                 //     $idParent = $user['parent_id'];
                 // }
 
-                // echo '<pre>';
-                //     var_dump($listUser); die();
-                // echo '</pre>';
+                // // echo '<pre>';
+                // //     var_dump($listUser); die();
+                // // echo '</pre>';
                 // if($idParent){
                 //     $userParent = $this->model->detail($idParent);
                 //     $user['parent_name'] = $userParent['name'];

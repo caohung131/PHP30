@@ -21,6 +21,8 @@
             return $this->conn;
         }
 
+        
+
         function select($columns = '*') 
         {   
             if($columns == '*') {
@@ -53,6 +55,44 @@
 
             return $data;
         }
+
+        //Phan quyen dieu
+        // public function select($columns = '*', $page='1', $limit=null){
+        //     if ($columns == '*') {
+        //         $query = "SELECT * FROM " . $this->tableName;
+        //         if($limit != null){
+        //             $offset = ($page-1)*$limit + 1;
+        //             $query .=" LIMIT ".$limit." OFFSET ".$offset;
+        //         }
+        //     }elseif (is_array($columns)) {
+        //         $sub_string = '';
+        //         foreach ($columns as $i =>$column) {
+        //             $sub_string .= $column;
+        
+        //             if ($i + 1 != count($columns)) {
+        //                 $sub_string .= ',';
+        //             }
+        //         }
+        //         // SELECT id,name,description,thumbnail FROM users;
+        //         $query = "SELECT " . $sub_string . " FROM " . $this->tableName;
+        //         if($limit != null){
+        //             $offset = ($page-1)*$limit + 1;
+        //             $query .=" LIMIT ".$limit." OFFSET ".$offset;
+        //         }
+        //     }else{
+        //         exit();
+        //     }
+        //     $result = $this->conn->query($query);
+        
+        //     // Buoc 3
+        //     // Tạo 1 mảng để chứa dữ liệu
+        //     $data = array();
+        //     while($row = $result->fetch_assoc()) { 
+        //         $data[] = $row;
+        //     }
+        //     return $data;
+        // }
+        //het
 
         public function getById($id){
             $query = "SELECT * from $this->tableName WHERE id = ". $id;

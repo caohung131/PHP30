@@ -40,6 +40,55 @@
                         }
                     ?>
                     <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <div class="form-floating" >
+                        <h4>Viết bình luận</h4><span class="glyphicon glyphicon-pencil">...</span>
+                        <form action="index.php?mod=comment&action=index" method="POST" role="form">
+                            <div class="form-group">
+                                <textarea name="content" id="" rows="3" class="form-control"></textarea>
+                                <button type="submit" class="btn btn-primary">Gửi</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="form-floating" >
+                        <br>
+                        <ul class="form-floating">
+                            
+                            <?php
+                                    foreach($coments as $key => $commet) {
+                                        echo '<div>';
+                                        echo '<img src="upload/150143.jpg" alt="" width=100px>';
+                                        echo "
+                                        
+                                        <li> ". $commet["content"]; ".</li>
+                                
+                                        ";
+
+                                        echo '</div>';
+
+                                    }
+                            ?>
+
+                    </ul>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <?php
+                                // foreach() {
+                                //     echo '
+                                
+                                //     <li></li>
+                               
+                                // ';
+                                // }
+                            ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

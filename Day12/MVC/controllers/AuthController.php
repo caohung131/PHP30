@@ -27,7 +27,7 @@
         public function logOut() {
             unset($_SESSION['auth']);
             setcookie('Success', 'Đăng kí thành công', time()-5000);
-            header("Location: index.php?mod=auth&action=login");
+            header("Location: index.php?mod=index&action=index");
         }
 
         public function register() {

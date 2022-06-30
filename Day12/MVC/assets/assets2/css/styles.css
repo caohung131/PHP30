@@ -11123,7 +11123,7 @@ header.masthead {
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
   background: no-repeat center center;
-  background-color: #6c757d;
+  background-image: url(../../../upload/pexels-cottonbro-5077043.jpg) !important;
   background-size: cover;
   background-attachment: scroll;
 }
@@ -11134,8 +11134,9 @@ header.masthead:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #212529;
   opacity: 0.5;
+  background-color: #848484;
+
 }
 header.masthead .page-heading,
 header.masthead .post-heading,

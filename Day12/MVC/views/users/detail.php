@@ -19,12 +19,12 @@
     display: contents;" >
         <h2 class="text-center">--- Detail Users ---</h2>
        
-                 <h3>ID: <?= $categorie['id']?></h3>
+                <h3>ID: <?= $categorie['id']?></h3>
                 <h3>Name: <?= $categorie['name']?></h3>
                 <h3>Description: <?= $categorie['mobile']?></h3>
                 <h3>Description: <?= $categorie['email']?></h3>
                 <h3>Slug:<?= $categorie['slug']?></h3>
-                <h3>Thumbnail:<br/><img width="550px" height="450px" src="upload/<?= $categorie['avatar']?>" alt="" ></h3>
+                <h3>Thumbnail:<br/><img width="550px" height="450px" src="upload/<?= $categorie['avatar']?>" alt=""  style="border-radius: 10%;"></h3>
                 <h3>Parent_id: <?= $categorie['status']?></h3>
                 <h3>Created_at: <?= $categorie['created_at']?></h3>
                 <h3>Created_at: <?= $categorie['update_at']?></h3>
